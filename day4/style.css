@@ -1,0 +1,92 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+.frame {
+  width: 400px;
+  height: 400px;
+  top: 50%;
+  left: 50%;
+  background-color: #e56262;
+  position: absolute;
+  overflow: hidden;
+  margin-top: -200px;
+  margin-left: -200px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.content {
+  position: absolute;
+  width: 100px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.box1 {
+  margin-top: -60px;
+  position: absolute;
+  border-radius: 50%;
+  box-shadow: 4px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  background: #fff;
+  text-align: center;
+  width: 120px;
+  height: 120px;
+  animation: box1 2s infinite alternate;
+}
+@keyframes box1 {
+  0% {
+    box-shadow: 0;
+    transform: scale(0);
+  }
+  60%,
+  100% {
+    box-shadow: 10px 10px 15px 0 rgba(0, 0, 0, 0.3);
+    transform: scale(1);
+  }
+}
+.box2 {
+  margin-top: -40px;
+  margin-left: 20px;
+  position: absolute;
+  border-radius: 50%;
+  box-shadow: 4px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  background: white;
+  text-align: center;
+  width: 80px;
+  height: 80px;
+  animation: box2 2s infinite alternate;
+}
+@keyframes box2 {
+  0%,
+  20% {
+    box-shadow: 0;
+    transform: scale(0);
+  }
+  100% {
+    box-shadow: 10px 10px 15px 0 rgba(0, 0, 0, 0.3);
+    transform: scale(1);
+  }
+}
+.box3 {
+  margin-top: -20px;
+  margin-left: 40px;
+  position: absolute;
+  border-radius: 50%;
+  box-shadow: 4px 8px 16px 0px rgba(0, 0, 0, 0.3);
+  background: #fff;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  animation: box3 2s infinite alternate;
+}
+@keyframes box3 {
+  0%,
+  40% {
+    box-shadow: 0;
+    transform: scale(0);
+  }
+  100% {
+    box-shadow: 10px 10px 15px 0 rgba(0, 0, 0, 0.3);
+    transform: scale(1);
+  }
+}

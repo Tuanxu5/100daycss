@@ -1,0 +1,264 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+.frame {
+  background: #42a7a1;
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 5px;
+  box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.3);
+  font-family: "SF Mono";
+  overflow: hidden;
+}
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+}
+.card {
+  position: relative;
+  border-radius: 5px;
+  width: 250px;
+  height: 200px;
+  background-color: #fff;
+  box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.3);
+}
+.card-header {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  position: relative;
+  width: 100%;
+  height: 50px;
+  background-color: #f1ba64;
+  display: flex;
+  justify-content: space-around;
+  line-height: 1.3;
+}
+.card-header .left {
+  float: left;
+  height: 50px;
+  width: 140px;
+}
+.card-header .left .heading {
+  padding: 10px 0px 3px 10px;
+  font-size: 12px;
+  color: white;
+}
+.card-header .left .date {
+  padding: 0px 0px 3px 10px;
+  font-size: 9px;
+  color: white;
+}
+.card-header .right {
+  text-align: right;
+  float: right;
+  height: 50px;
+  width: 110px;
+}
+.card-header .right .heading {
+  padding: 10px 10px 0px 0px;
+  font-size: 10px;
+  color: white;
+}
+.card-header .right .money {
+  padding: 0px 10px 0px 0px;
+  font-size: 14px;
+  color: white;
+}
+.legend {
+  height: 20px;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  margin: 0 10px;
+}
+
+.red {
+  font-size: 10px;
+  color: #606060;
+  margin: 0 20px;
+  position: relative;
+}
+.blue {
+  margin: 0 20px;
+  font-size: 10px;
+  color: #606060;
+  position: relative;
+  margin-right: 0;
+}
+.red::before {
+  content: "";
+  width: 10px;
+  height: 2.5px;
+  background: #fa7373;
+  position: absolute;
+  top: 5px;
+  right: 35px;
+  border-radius: 2px;
+}
+.blue::before {
+  position: absolute;
+  top: 5px;
+  right: 35px;
+  border-radius: 2px;
+  content: "";
+  width: 10px;
+  height: 2.5px;
+  background: #7ba2ff;
+  right: 60px;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 120px;
+  position: relative;
+}
+.stat {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
+.day {
+  font-size: 9px;
+  color: #949494;
+}
+.view-dot,
+.purchase-dot {
+  position: relative;
+  height: 6px;
+  width: 6px;
+  background: #fa7373;
+  border-radius: 50%;
+  z-index: 1;
+}
+.purchase-dot {
+  background: #7ba2ff;
+}
+.mon .view-dot {
+  top: 28px;
+}
+.mon .purchase-dot {
+  top: 5px;
+}
+.tue .view-dot {
+  top: -7px;
+}
+.tue .purchase-dot {
+  top: -7px;
+}
+.wed .view-dot {
+  top: 2px;
+}
+.wed .purchase-dot {
+  top: 5px;
+}
+.thu .view-dot {
+  top: -8px;
+}
+.thu .purchase-dot {
+  top: -3px;
+}
+.fri .view-dot {
+  top: 18px;
+}
+.fri .purchase-dot {
+  top: 1px;
+}
+.sat .view-dot {
+  top: 30px;
+}
+.sat .purchase-dot {
+  top: 15px;
+}
+.sun .view-dot {
+  top: 0px;
+}
+.sun .purchase-dot {
+  top: 4px;
+}
+svg {
+  position: absolute;
+  border-width: 6px;
+  fill: none;
+  stroke: #fa7373;
+  stroke-width: 2px;
+}
+
+.blue-line {
+  stroke: #7ba2ff;
+}
+
+.view-dot::after,
+.purchase-dot::after {
+  position: absolute;
+  content: attr(data-tool-tip);
+  background: #fa7373;
+  font-size: 11px;
+  font-family: "Open Sans";
+  font-weight: bold;
+  color: #fff;
+  padding: 6px;
+  border-radius: 3px;
+  bottom: 12px;
+  right: -13px;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.view-dot:hover,
+.purchase-dot:hover {
+  cursor: pointer;
+}
+
+.purchase-dot::after {
+  right: -10px;
+  background: #7ba2ff;
+}
+
+.view-dot:hover::after,
+.purchase-dot:hover::after {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.4s ease-out;
+}
+
+.view-dot::before,
+.purchase-dot::before {
+  content: "";
+  position: absolute;
+  border: 5px solid transparent;
+  border-top: 5px solid #fa7373;
+  bottom: 3px;
+  right: -3px;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.purchase-dot::before {
+  bottom: 3px;
+  right: -2px;
+  border-top: 5px solid #7ba2ff;
+}
+
+.view-dot:hover::before,
+.purchase-dot:hover::before {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.4s ease-out;
+}
